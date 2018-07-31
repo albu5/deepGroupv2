@@ -83,6 +83,9 @@ else:
                 px = np.reshape(px, newshape=(n_people, n_people, feature_len))
                 gd = group_data[:, :, t]
                 mask = mask_data[t, :, :]
+                ga = anno_data[t, :, -2]
+
+                # get GA and add it to data
 
                 interaction = np.expand_dims(interaction_data[:, :, t], axis=2)
                 interaction = np.repeat(interaction, repeats=len(interaction_info), axis=2)
@@ -91,10 +94,12 @@ else:
                 _interaction = np.repeat(_interaction, repeats=interaction.shape[0], axis=1)
                 interaction = interaction == _interaction
 
+                if interaction.shape[0] != gd.shape[0]:
+                    print(interaction.shape, gd.shape)
                 if seq in test_seq:
-                    test_data.append((px, interaction, gd, mask))
+                    test_data.append((px, interaction, gd, ga, mask))
                 else:
-                    train_data.append((px, interaction, gd, mask))
+                    train_data.append((px, interaction, gd, ga, mask))
         with open(data_file, mode='wb') as f:
             pickle.dump({'train_data': train_data, 'test_data': test_data}, f)
     else:
@@ -103,23 +108,27 @@ else:
         train_data = data['train_data']
         test_data = data['test_data']
 
-
     mae_epoch = []
     for n_epoch in range(30):
         shuffle(train_data)
         mae_train = []
         for train_datum in train_data:
             if np.sum(train_datum[2].astype(np.float), axis=None) > 0:
-                gd_pred = pairwise_distance_net.predict(np.expand_dims(train_datum[0], axis=0), verbose=0)
-                mae = np.sum(np.abs(gd_pred - train_datum[1]), axis=None) / np.sum(train_datum[2].astype(np.float), axis=None)
+                ga_pred = group_activity_net.predict([np.expand_dims(train_datum[1], axis=0),
+                                                      np.expand_dims(train_datum[2], axis=0)],
+                                                     verbose=0)
+                ga_pred = np.squeeze(ga_pred)
+                print(train_datum[3].shape)
+                mae = np.sum(np.cast(np.argmax(ga_pred, axis=1) == np.argmax(train_datum[3], axis=1)))
                 mae_train.append(mae)
-                pairwise_distance_net.train_on_batch(np.expand_dims(train_datum[0], axis=0), np.expand_dims(train_datum[1], axis=0))
+                group_activity_net.train_on_batch(np.expand_dims(train_datum[0], axis=0),
+                                                  np.expand_dims(train_datum[1], axis=0))
         mae_epoch.append(np.mean(np.array(mae_train)))
         plt.clf()
         plt.plot(mae_epoch)
         plt.pause(0.03)
 
-    pairwise_distance_net.save(model_file)
+        group_activity_net.save(model_file)
 
 for _seq in range(0, 33):
     seq = _seq + 1
