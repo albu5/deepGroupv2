@@ -8,7 +8,7 @@ n_people = 10
 pose_info = ['right', 'front-right', 'front', 'front-left', 'left', 'left-back', 'back', 'right-back']
 action_info = ['standing', 'walking', 'running']
 interaction_info = ['no-interaction', 'int1', 'int2', 'int3', 'int4', 'int5', 'int6', 'int7', 'int8', 'int9', 'int10']
-n_interaction_info  = len(interaction_info)
+n_interaction_info = len(interaction_info)
 group_act_info = ['act1', 'act2', 'act3', 'act4', 'act5', 'act6', 'act7', 'act8', 'act9', 'act10']
 scene_act_info = ['act1', 'act2', 'act3', 'act4', 'act5', 'act6', 'act7', 'act8', 'act9', 'act10']
 
@@ -48,18 +48,18 @@ def pairwise_distance():
 
 
 def group_activity():
-    pairwise_activity_input = Input(shape=[None, None, n_interaction_info], name='pairwise_activity_input')
+    pairwise_activity_input = Input(shape=[None, None, len(group_act_info)], name='pairwise_activity_input')
     pairwise_distance_input = Input(shape=[None, None], name='pairwise_distance_input')
     pairwise_distance_input_repeat = Lambda(lambda x: kb.repeat_elements(kb.expand_dims(pairwise_distance_input, 3),
-                                                                         len(interaction_info),
+                                                                         len(group_act_info),
                                                                          axis=3))(pairwise_distance_input)
     pairwise_activity_histogram = Lambda(lambda x: kb.mean(x[1]*x[0],
                                                            axis=2),
                                          name='weighted_mean_histogram')([pairwise_activity_input,
                                                                           pairwise_distance_input_repeat])
     dense1 = Dense(units=32, activation='sigmoid')(pairwise_activity_histogram)
-    dense2 = Dense(units=32, activation='sigmoid')(dense1)
-    group_activity_output = Dense(units=len(group_act_info), activation='softmax', name='group_activity_output')(dense2)
+    # dense2 = Dense(units=32, activation='sigmoid')(dense1)
+    group_activity_output = Dense(units=len(group_act_info), activation='softmax', name='group_activity_output')(dense1)
     return Model(inputs=[pairwise_activity_input, pairwise_distance_input], outputs=[group_activity_output])
 
 
@@ -105,7 +105,22 @@ def pairwise_distance_mat():
     return Model(inputs=[pairwise_feature_mat], outputs=[pairwise_distances])
 
 
+def pairwise_interaction():
+    pairwise_feature_input = Input(shape=(feature_len,))
+    dense1 = Dense(units=32, activation='sigmoid')(pairwise_feature_input)
+    pairwise_activity_output = Dense(units=len(group_act_info), activation='softmax')(dense1)
+    return Model(inputs=[pairwise_feature_input], outputs=[pairwise_activity_output])
+
+
+def pairwise_interaction_mat():
+    pairwise_feature_mat = Input(batch_shape=(None, None, None, feature_len), name='pairwise_feature_mat')
+    pairwise_interactions = Lambda(lambda x: kb.squeeze(x, axis=3))(pairwise_interaction()(pairwise_feature_mat))
+    return Model(inputs=[pairwise_feature_mat], outputs=[pairwise_interactions])
+
+
 if __name__ == "__main__":
+    print(pairwise_interaction_mat().summary())
+
     a = [[1, 1, 0, 0],
          [1, 1, 0, 0],
          [0, 0, 1, 1],
