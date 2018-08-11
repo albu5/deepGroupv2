@@ -99,6 +99,46 @@ def my_categorical_accuracy(y_true, y_pred):
     return tf.reduce_mean(tf.cast(y_true == y_pred, kb.floatx()), axis=None)
 
 
+def my_categorical_crossentropy_mask(target, output, from_logits=False):
+    """Categorical crossentropy between an output tensor and a target tensor.
+
+    # Arguments
+        target: A tensor of the same shape as `output`.
+        output: A tensor resulting from a softmax
+            (unless `from_logits` is True, in which
+            case `output` is expected to be the logits).
+        from_logits: Boolean, whether `output` is the
+            result of a softmax, or is a tensor of logits.
+
+    # Returns
+        Output tensor.
+    """
+    # Note: tf.nn.softmax_cross_entropy_with_logits
+    # expects logits, Keras expects probabilities.
+    if not from_logits:
+        # scale preds so that the class probas of each sample sum to 1
+        output /= tf.reduce_sum(output,
+                                len(output.get_shape()) - 1,
+                                True)
+        # manual computation of crossentropy
+        _epsilon = tf.convert_to_tensor(kb.epsilon(), output.dtype.base_dtype)
+        output = tf.clip_by_value(output, _epsilon, 1. - _epsilon)
+        valid_logs = tf.reduce_sum(target * tf.log(output), axis=3)
+        valid_logs *= tf.cast(tf.argmax(target, axis=3) > 0, dtype=kb.floatx())
+        return -tf.reduce_sum(valid_logs)
+    else:
+        return tf.nn.softmax_cross_entropy_with_logits(labels=target,
+                                                       logits=output)
+
+
+def my_categorical_accuracy_mask(y_true, y_pred):
+    y_true = tf.argmax(y_true, axis=3)
+    y_pred = tf.argmax(y_pred, axis=3)
+    correct = tf.cast(y_true == y_pred, dtype=kb.floatx())
+    correct *= tf.cast(y_true > 0, dtype=kb.floatx())
+    return tf.reduce_sum(tf.cast(correct, kb.floatx())) / tf.reduce_sum(tf.cast(y_true > 0, dtype=kb.floatx()))
+
+
 def pairwise_distance_mat():
     pairwise_feature_mat = Input(batch_shape=(None, None, None, feature_len), name='pairwise_feature_mat')
     pairwise_distances = Lambda(lambda x: kb.squeeze(x, axis=3))(pairwise_distance()(pairwise_feature_mat))
@@ -114,7 +154,7 @@ def pairwise_interaction():
 
 def pairwise_interaction_mat():
     pairwise_feature_mat = Input(batch_shape=(None, None, None, feature_len), name='pairwise_feature_mat')
-    pairwise_interactions = Lambda(lambda x: kb.squeeze(x, axis=3))(pairwise_interaction()(pairwise_feature_mat))
+    pairwise_interactions = pairwise_interaction()(pairwise_feature_mat)
     return Model(inputs=[pairwise_feature_mat], outputs=[pairwise_interactions])
 
 

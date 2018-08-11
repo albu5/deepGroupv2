@@ -10,22 +10,42 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="networks.py" pinned="false" current-in-tab="true">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="networks.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/networks.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="287">
-              <caret line="132" column="38" lean-forward="true" selection-start-line="132" selection-start-column="38" selection-end-line="132" selection-end-column="38" />
+            <state relative-caret-position="190">
+              <caret line="149" column="27" lean-forward="false" selection-start-line="149" selection-start-column="27" selection-end-line="149" selection-end-column="27" />
               <folding>
                 <element signature="e#735#1112#0" expanded="false" />
                 <element signature="e#1154#1747#0" expanded="false" />
+                <element signature="e#1779#2127#0" expanded="false" />
                 <element signature="e#2156#3381#0" expanded="false" />
+                <element signature="e#2878#3009#0" expanded="false" />
                 <element signature="e#3456#4665#0" expanded="false" />
+                <element signature="e#3456#3920#1" expanded="false" />
                 <element signature="e#3925#3972#0" expanded="false" />
                 <element signature="e#4056#4515#0" expanded="false" />
+                <element signature="e#4534#4665#0" expanded="false" />
                 <element signature="e#4717#4867#0" expanded="false" />
-                <element signature="e#5956#6039#0" expanded="false" />
-                <element signature="e#6048#6163#0" expanded="false" />
+                <element signature="e#4947#5411#1" expanded="false" />
+                <element signature="e#6670#6958#0" expanded="false" />
+                <element signature="e#7339#7595#0" expanded="false" />
+                <element signature="e#7629#8994#0" expanded="false" />
+                <element signature="e#7682#7765#0" expanded="false" />
+                <element signature="e#7774#7889#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pairwise_interaction.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pairwise_interaction.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="125" column="38" lean-forward="false" selection-start-line="125" selection-start-column="38" selection-end-line="125" selection-end-column="38" />
+              <folding>
+                <element signature="e#52#70#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -46,12 +66,14 @@
       <find>labels_</find>
       <find>categ</find>
       <find />
-      <find />
+      <find>test_data</find>
+      <find>train</find>
     </findStrings>
     <replaceStrings>
       <replace>kb</replace>
       <replace>,</replace>
-      <replace>,</replace>
+      <replace>train_data</replace>
+      <replace>test</replace>
     </replaceStrings>
   </component>
   <component name="IdeDocumentHistory">
@@ -64,6 +86,7 @@
         <option value="$PROJECT_DIR$/group_activity.py" />
         <option value="$PROJECT_DIR$/readme.txt" />
         <option value="$PROJECT_DIR$/networks.py" />
+        <option value="$PROJECT_DIR$/pairwise_interaction.py" />
       </list>
     </option>
   </component>
@@ -87,7 +110,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -100,6 +122,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -118,7 +141,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.networks">
+  <component name="RunManager" selected="Python.pairwise_interaction">
     <configuration name="group_activity" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -173,6 +196,24 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
+    <configuration name="pairwise_interaction" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="src" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/pairwise_interaction.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+    </configuration>
     <configuration name="utils" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -191,18 +232,20 @@
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
     </configuration>
-    <list size="4">
-      <item index="0" class="java.lang.String" itemvalue="Python.utils" />
-      <item index="1" class="java.lang.String" itemvalue="Python.pairwise_distance" />
-      <item index="2" class="java.lang.String" itemvalue="Python.networks" />
-      <item index="3" class="java.lang.String" itemvalue="Python.group_activity" />
+    <list size="5">
+      <item index="0" class="java.lang.String" itemvalue="Python.pairwise_distance" />
+      <item index="1" class="java.lang.String" itemvalue="Python.utils" />
+      <item index="2" class="java.lang.String" itemvalue="Python.group_activity" />
+      <item index="3" class="java.lang.String" itemvalue="Python.networks" />
+      <item index="4" class="java.lang.String" itemvalue="Python.pairwise_interaction" />
     </list>
     <recent_temporary>
-      <list size="4">
-        <item index="0" class="java.lang.String" itemvalue="Python.networks" />
-        <item index="1" class="java.lang.String" itemvalue="Python.group_activity" />
-        <item index="2" class="java.lang.String" itemvalue="Python.pairwise_distance" />
+      <list size="5">
+        <item index="0" class="java.lang.String" itemvalue="Python.pairwise_interaction" />
+        <item index="1" class="java.lang.String" itemvalue="Python.networks" />
+        <item index="2" class="java.lang.String" itemvalue="Python.group_activity" />
         <item index="3" class="java.lang.String" itemvalue="Python.utils" />
+        <item index="4" class="java.lang.String" itemvalue="Python.pairwise_distance" />
       </list>
     </recent_temporary>
   </component>
@@ -230,7 +273,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40625" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2944079" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41776314" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -249,18 +292,18 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
       <option name="time" value="2" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3927">
-          <caret line="231" column="0" lean-forward="false" selection-start-line="231" selection-start-column="0" selection-end-line="244" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/networks.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="867">
@@ -268,13 +311,21 @@
           <folding>
             <element signature="e#735#1112#0" expanded="false" />
             <element signature="e#1154#1747#0" expanded="false" />
+            <element signature="e#1779#2127#0" expanded="false" />
             <element signature="e#2156#3381#0" expanded="false" />
+            <element signature="e#2878#3009#0" expanded="false" />
             <element signature="e#3456#4665#0" expanded="false" />
+            <element signature="e#3456#3920#1" expanded="false" />
             <element signature="e#3925#3972#0" expanded="false" />
             <element signature="e#4056#4515#0" expanded="false" />
+            <element signature="e#4534#4665#0" expanded="false" />
             <element signature="e#4717#4867#0" expanded="false" />
-            <element signature="e#5956#6039#0" expanded="false" />
-            <element signature="e#6048#6163#0" expanded="false" />
+            <element signature="e#4947#5411#1" expanded="false" />
+            <element signature="e#6670#6958#0" expanded="false" />
+            <element signature="e#7339#7595#0" expanded="false" />
+            <element signature="e#7629#8994#0" expanded="false" />
+            <element signature="e#7682#7765#0" expanded="false" />
+            <element signature="e#7774#7889#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -307,13 +358,21 @@
           <folding>
             <element signature="e#735#1112#0" expanded="false" />
             <element signature="e#1154#1747#0" expanded="false" />
+            <element signature="e#1779#2127#0" expanded="false" />
             <element signature="e#2156#3381#0" expanded="false" />
+            <element signature="e#2878#3009#0" expanded="false" />
             <element signature="e#3456#4665#0" expanded="false" />
+            <element signature="e#3456#3920#1" expanded="false" />
             <element signature="e#3925#3972#0" expanded="false" />
             <element signature="e#4056#4515#0" expanded="false" />
+            <element signature="e#4534#4665#0" expanded="false" />
             <element signature="e#4717#4867#0" expanded="false" />
-            <element signature="e#5956#6039#0" expanded="false" />
-            <element signature="e#6048#6163#0" expanded="false" />
+            <element signature="e#4947#5411#1" expanded="false" />
+            <element signature="e#6670#6958#0" expanded="false" />
+            <element signature="e#7339#7595#0" expanded="false" />
+            <element signature="e#7629#8994#0" expanded="false" />
+            <element signature="e#7682#7765#0" expanded="false" />
+            <element signature="e#7774#7889#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -332,13 +391,21 @@
           <folding>
             <element signature="e#735#1112#0" expanded="false" />
             <element signature="e#1154#1747#0" expanded="false" />
+            <element signature="e#1779#2127#0" expanded="false" />
             <element signature="e#2156#3381#0" expanded="false" />
+            <element signature="e#2878#3009#0" expanded="false" />
             <element signature="e#3456#4665#0" expanded="false" />
+            <element signature="e#3456#3920#1" expanded="false" />
             <element signature="e#3925#3972#0" expanded="false" />
             <element signature="e#4056#4515#0" expanded="false" />
+            <element signature="e#4534#4665#0" expanded="false" />
             <element signature="e#4717#4867#0" expanded="false" />
-            <element signature="e#5956#6039#0" expanded="false" />
-            <element signature="e#6048#6163#0" expanded="false" />
+            <element signature="e#4947#5411#1" expanded="false" />
+            <element signature="e#6670#6958#0" expanded="false" />
+            <element signature="e#7339#7595#0" expanded="false" />
+            <element signature="e#7629#8994#0" expanded="false" />
+            <element signature="e#7682#7765#0" expanded="false" />
+            <element signature="e#7774#7889#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -371,13 +438,21 @@
           <folding>
             <element signature="e#735#1112#0" expanded="false" />
             <element signature="e#1154#1747#0" expanded="false" />
+            <element signature="e#1779#2127#0" expanded="false" />
             <element signature="e#2156#3381#0" expanded="false" />
+            <element signature="e#2878#3009#0" expanded="false" />
             <element signature="e#3456#4665#0" expanded="false" />
+            <element signature="e#3456#3920#1" expanded="false" />
             <element signature="e#3925#3972#0" expanded="false" />
             <element signature="e#4056#4515#0" expanded="false" />
+            <element signature="e#4534#4665#0" expanded="false" />
             <element signature="e#4717#4867#0" expanded="false" />
-            <element signature="e#5956#6039#0" expanded="false" />
-            <element signature="e#6048#6163#0" expanded="false" />
+            <element signature="e#4947#5411#1" expanded="false" />
+            <element signature="e#6670#6958#0" expanded="false" />
+            <element signature="e#7339#7595#0" expanded="false" />
+            <element signature="e#7629#8994#0" expanded="false" />
+            <element signature="e#7682#7765#0" expanded="false" />
+            <element signature="e#7774#7889#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -417,13 +492,21 @@
           <folding>
             <element signature="e#735#1112#0" expanded="false" />
             <element signature="e#1154#1747#0" expanded="false" />
+            <element signature="e#1779#2127#0" expanded="false" />
             <element signature="e#2156#3381#0" expanded="false" />
+            <element signature="e#2878#3009#0" expanded="false" />
             <element signature="e#3456#4665#0" expanded="false" />
+            <element signature="e#3456#3920#1" expanded="false" />
             <element signature="e#3925#3972#0" expanded="false" />
             <element signature="e#4056#4515#0" expanded="false" />
+            <element signature="e#4534#4665#0" expanded="false" />
             <element signature="e#4717#4867#0" expanded="false" />
-            <element signature="e#5956#6039#0" expanded="false" />
-            <element signature="e#6048#6163#0" expanded="false" />
+            <element signature="e#4947#5411#1" expanded="false" />
+            <element signature="e#6670#6958#0" expanded="false" />
+            <element signature="e#7339#7595#0" expanded="false" />
+            <element signature="e#7629#8994#0" expanded="false" />
+            <element signature="e#7682#7765#0" expanded="false" />
+            <element signature="e#7774#7889#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -463,13 +546,21 @@
           <folding>
             <element signature="e#735#1112#0" expanded="false" />
             <element signature="e#1154#1747#0" expanded="false" />
+            <element signature="e#1779#2127#0" expanded="false" />
             <element signature="e#2156#3381#0" expanded="false" />
+            <element signature="e#2878#3009#0" expanded="false" />
             <element signature="e#3456#4665#0" expanded="false" />
+            <element signature="e#3456#3920#1" expanded="false" />
             <element signature="e#3925#3972#0" expanded="false" />
             <element signature="e#4056#4515#0" expanded="false" />
+            <element signature="e#4534#4665#0" expanded="false" />
             <element signature="e#4717#4867#0" expanded="false" />
-            <element signature="e#5956#6039#0" expanded="false" />
-            <element signature="e#6048#6163#0" expanded="false" />
+            <element signature="e#4947#5411#1" expanded="false" />
+            <element signature="e#6670#6958#0" expanded="false" />
+            <element signature="e#7339#7595#0" expanded="false" />
+            <element signature="e#7629#8994#0" expanded="false" />
+            <element signature="e#7682#7765#0" expanded="false" />
+            <element signature="e#7774#7889#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -672,18 +763,36 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/networks.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="132" column="38" lean-forward="true" selection-start-line="132" selection-start-column="38" selection-end-line="132" selection-end-column="38" />
+        <state relative-caret-position="190">
+          <caret line="149" column="27" lean-forward="false" selection-start-line="149" selection-start-column="27" selection-end-line="149" selection-end-column="27" />
           <folding>
             <element signature="e#735#1112#0" expanded="false" />
             <element signature="e#1154#1747#0" expanded="false" />
+            <element signature="e#1779#2127#0" expanded="false" />
             <element signature="e#2156#3381#0" expanded="false" />
+            <element signature="e#2878#3009#0" expanded="false" />
             <element signature="e#3456#4665#0" expanded="false" />
+            <element signature="e#3456#3920#1" expanded="false" />
             <element signature="e#3925#3972#0" expanded="false" />
             <element signature="e#4056#4515#0" expanded="false" />
+            <element signature="e#4534#4665#0" expanded="false" />
             <element signature="e#4717#4867#0" expanded="false" />
-            <element signature="e#5956#6039#0" expanded="false" />
-            <element signature="e#6048#6163#0" expanded="false" />
+            <element signature="e#4947#5411#1" expanded="false" />
+            <element signature="e#6670#6958#0" expanded="false" />
+            <element signature="e#7339#7595#0" expanded="false" />
+            <element signature="e#7629#8994#0" expanded="false" />
+            <element signature="e#7682#7765#0" expanded="false" />
+            <element signature="e#7774#7889#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pairwise_interaction.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="125" column="38" lean-forward="false" selection-start-line="125" selection-start-column="38" selection-end-line="125" selection-end-column="38" />
+          <folding>
+            <element signature="e#52#70#0" expanded="true" />
           </folding>
         </state>
       </provider>

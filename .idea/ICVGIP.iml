@@ -4,7 +4,7 @@
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/venv" />
     </content>
-    <orderEntry type="jdk" jdkName="Python 3.5.4 (C:\Users\Ashish\AppData\Local\conda\conda\envs\tf\python.exe)" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 3.5.4 (C:\libs\Anaconda\envs\tf\python.exe)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
   <component name="TestRunnerService">
